@@ -77,7 +77,7 @@
                     </properties>
                     <instance-variables>
                         <Health>200</Health>
-                        <Rockets>10</Rockets>
+                        <Rockets>20</Rockets>
                         <Wins>0</Wins>
                     </instance-variables>
                     <behavior-instances>
@@ -177,7 +177,7 @@
                     </properties>
                     <instance-variables>
                         <Health>200</Health>
-                        <Rokcets>10</Rokcets>
+                        <Rokcets>20</Rokcets>
                         <Wins>0</Wins>
                     </instance-variables>
                     <behavior-instances>
@@ -531,7 +531,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="P1Wins" uid="13">
+                <instance type="GamesWonByP1" uid="13">
                     <properties>
                         <text>0</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -543,17 +543,41 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
-                    <instance-variables>
-                        <Wins>0</Wins>
-                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>14</x>
-                        <y>852</y>
+                        <x>15</x>
+                        <y>860</y>
                         <z>0</z>
-                        <width>192</width>
-                        <height>264</height>
+                        <width>237</width>
+                        <height>138</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GamesWonByP2" uid="14">
+                    <properties>
+                        <text>0</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-64,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1228</x>
+                        <y>861</y>
+                        <z>0</z>
+                        <width>260</width>
+                        <height>160</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

@@ -236,6 +236,12 @@
                 <instance-variable name="Wins" sid="749435825763082" type="number" />
             </instance-variables>
         </object-type>
+        <object-type name="GamesWonByP1" sid="969021760210884">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GamesWonByP2" sid="324865631121711">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

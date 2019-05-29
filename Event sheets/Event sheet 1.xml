@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="P2Wins" sid="944307788523910" static="0" type="number">0</variable>
+        <variable constant="0" name="P1Wins" sid="673800846166015" static="0" type="number">0</variable>
         <comment>Bullet hitting Player1</comment>
         <event-block sid="460942925488666">
             <conditions>
@@ -33,6 +35,13 @@
                 <action id="-9" name="Destroy" sid="573154365966954" type="Player1" />
                 <action id="-15" name="Set visible" sid="678700815706831" type="Player2Wins">
                     <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="761161927306659" type="System">
+                    <param id="0" name="Variable">P2Wins</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="830213481309813" type="GamesWonByP2">
+                    <param id="0" name="Text">P2Wins</param>
                 </action>
             </actions>
         </event-block>
@@ -188,9 +197,12 @@
                 <action id="-15" name="Set visible" sid="334142688002001" type="Player1Wins">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-11" name="Add to" sid="707029199003753" type="Player1">
-                    <param id="0" name="Instance variable">Wins</param>
+                <action id="-10" name="Add to" sid="421868733849384" type="System">
+                    <param id="0" name="Variable">P1Wins</param>
                     <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="717356192322845" type="GamesWonByP1">
+                    <param id="0" name="Text">P1Wins</param>
                 </action>
             </actions>
         </event-block>
@@ -240,6 +252,13 @@
                 <action id="-15" name="Set visible" sid="542438509392965" type="Player2Wins">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="-10" name="Add to" sid="424019758670893" type="System">
+                    <param id="0" name="Variable">P2Wins</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="818306775508614" type="GamesWonByP2">
+                    <param id="0" name="Text">P2Wins</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="473423029395494">
@@ -259,6 +278,13 @@
                 </action>
                 <action id="-15" name="Set visible" sid="615842891420815" type="Player1Wins">
                     <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="450562947221820" type="System">
+                    <param id="0" name="Variable">P1Wins</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="756842231034948" type="GamesWonByP1">
+                    <param id="0" name="Text">P1Wins</param>
                 </action>
             </actions>
         </event-block>
@@ -335,6 +361,10 @@
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="104091185377353">
+            <conditions />
             <actions />
         </event-block>
     </events>
