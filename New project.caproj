@@ -22,6 +22,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -56,6 +57,7 @@
             <instance-variables>
                 <instance-variable name="Health" sid="224398815561359" type="number" />
                 <instance-variable name="Rockets" sid="962377338151255" type="number" />
+                <instance-variable name="Wins" sid="174596656205462" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="406332299400476">
@@ -121,6 +123,7 @@
             <instance-variables>
                 <instance-variable name="Health" sid="639940714840558" type="number" />
                 <instance-variable name="Rokcets" sid="748714934063024" type="number" />
+                <instance-variable name="Wins" sid="934200772336264" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CustomMovement" sid="597593202953483">
@@ -197,6 +200,11 @@
             <instance-variables>
                 <instance-variable name="Health1" sid="978275397176365" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="539087367726040">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
         </object-type>
         <object-type name="ProgressBar2P2" sid="627335747581839">
             <plugin id="progressbar" />
@@ -204,8 +212,29 @@
                 <instance-variable name="H2" sid="477136469907807" type="number" />
             </instance-variables>
         </object-type>
-        <object-type name="Text" sid="463419726335590">
+        <object-type name="Restart" sid="463419726335590">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="DRAW" sid="790219033370982">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Player1Wins" sid="754678453191246">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Player2Wins" sid="694617175934351">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Player1WonGames" sid="793897106733993">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="Text" sid="725285811266138">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="P1Wins" sid="254591930737968">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Wins" sid="749435825763082" type="number" />
+            </instance-variables>
         </object-type>
     </object-folder>
     <families />

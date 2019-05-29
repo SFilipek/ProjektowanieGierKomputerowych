@@ -78,6 +78,7 @@
                     <instance-variables>
                         <Health>200</Health>
                         <Rockets>10</Rockets>
+                        <Wins>0</Wins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -177,6 +178,7 @@
                     <instance-variables>
                         <Health>200</Health>
                         <Rokcets>10</Rokcets>
+                        <Wins>0</Wins>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
@@ -381,6 +383,9 @@
                     <instance-variables>
                         <Health1>100</Health1>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -418,7 +423,7 @@
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="Text" uid="9">
+                <instance type="Restart" uid="9">
                     <properties>
                         <text>Press M to restart.</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -438,6 +443,117 @@
                         <z>0</z>
                         <width>227</width>
                         <height>69</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DRAW" uid="10">
+                    <properties>
+                        <text>DRAW</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Candara,-120,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>474</x>
+                        <y>379</y>
+                        <z>0</z>
+                        <width>469</width>
+                        <height>243</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Player1Wins" uid="11">
+                    <properties>
+                        <text>Player1 Wins</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Candara,-120,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>355</x>
+                        <y>377</y>
+                        <z>0</z>
+                        <width>726</width>
+                        <height>152</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Player2Wins" uid="12">
+                    <properties>
+                        <text>Player2 Wins</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Candara,-120,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>355</x>
+                        <y>377</y>
+                        <z>0</z>
+                        <width>672</width>
+                        <height>198</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P1Wins" uid="13">
+                    <properties>
+                        <text>0</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-64,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <Wins>0</Wins>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>14</x>
+                        <y>852</y>
+                        <z>0</z>
+                        <width>192</width>
+                        <height>264</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

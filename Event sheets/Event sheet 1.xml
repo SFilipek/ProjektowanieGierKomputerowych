@@ -31,6 +31,9 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="573154365966954" type="Player1" />
+                <action id="-15" name="Set visible" sid="678700815706831" type="Player2Wins">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
         <comment>PLayer1 controls</comment>
@@ -182,6 +185,13 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="863103831941685" type="Player2" />
+                <action id="-15" name="Set visible" sid="334142688002001" type="Player1Wins">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-11" name="Add to" sid="707029199003753" type="Player1">
+                    <param id="0" name="Instance variable">Wins</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="725525655687960">
@@ -193,6 +203,23 @@
             <actions>
                 <action id="-9" name="Destroy" sid="442081101428728" type="Player1" />
                 <action id="-9" name="Destroy" sid="116109245895461" type="Player2" />
+                <action id="-5" name="Set width" sid="246037903302577" type="ProgressBarP1">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-5" name="Set width" sid="274796155105335" type="ProgressBar2P2">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="700886777187999" type="Player1">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="692635592843981" type="Player2">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="941404672602296" type="DRAW">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="546793698493665">
@@ -203,6 +230,16 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="644182307477880" type="Player1" />
+                <action id="-5" name="Set width" sid="539723276177694" type="ProgressBarP1">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="874016554686353" type="Player1">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="542438509392965" type="Player2Wins">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="473423029395494">
@@ -213,6 +250,16 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="112876082897400" type="Player2" />
+                <action id="-5" name="Set width" sid="422289348220345" type="ProgressBar2P2">
+                    <param id="0" name="Width">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="342523068375412" type="Player2">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="615842891420815" type="Player1Wins">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
         <comment></comment>
@@ -269,6 +316,26 @@
             <actions>
                 <action id="-26" name="Restart layout" sid="278970587229482" type="System" />
             </actions>
+        </event-block>
+        <event-block sid="334702780596482">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="261195264600481" type="Player1">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="670979930142338">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="626320258325708" type="Player2">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
