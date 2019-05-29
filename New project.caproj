@@ -271,7 +271,7 @@
         </object-type>
         <object-type name="Multiplayer" sid="581715433357352">
             <plugin id="Multiplayer" />
-	</object-type>
+        </object-type>
         <object-type name="Explosion3" sid="488019191149536">
             <plugin id="Sprite" />
             <animation-folder>
@@ -402,9 +402,9 @@
         <event-sheet>LoginEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Mouse" uid="16" />
-        <global-instance type="Keyboard" uid="17" />
-        <global-instance type="Multiplayer" uid="26" />
+        <global-instance type="Mouse" uid="26" />
+        <global-instance type="Keyboard" uid="27" />
+        <global-instance type="Multiplayer" uid="28" />
     </global-instances>
     <sounds-folder />
     <music-folder />

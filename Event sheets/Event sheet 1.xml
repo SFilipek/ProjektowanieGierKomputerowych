@@ -331,10 +331,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="771007892332175">
-            <conditions />
-            <actions />
-        </event-block>
         <event-block sid="874824053604748">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="854974177832603" type="Player1">
@@ -353,10 +349,6 @@
                     <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="551279000196991">
-            <conditions />
-            <actions />
         </event-block>
         <event-block sid="493214697910875">
             <conditions>
