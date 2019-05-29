@@ -78,7 +78,7 @@
             </conditions>
             <actions>
                 <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="883955392175737" type="Player1">
-                    <param id="0" name="Acceleration">50</param>
+                    <param id="0" name="Acceleration">20</param>
                     <param id="1" name="X">Mouse.X</param>
                     <param id="2" name="Y">Mouse.Y</param>
                 </action>
