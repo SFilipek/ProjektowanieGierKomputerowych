@@ -48,8 +48,9 @@
         <comment>PLayer1 controls</comment>
         <event-block sid="881669858200352">
             <conditions>
-                <condition id="0" name="On key pressed" sid="893701668364272" type="Keyboard">
-                    <param id="0" name="Key">87</param>
+                <condition id="0" name="On click" sid="893701668364272" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
                 </condition>
                 <condition id="-7" name="Compare instance variable" sid="239547335346027" type="Player1">
                     <param id="0" name="Instance variable">Rockets</param>
@@ -69,40 +70,29 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="759704158473623">
-            <conditions>
-                <condition id="2" name="Key is down" sid="811030534112402" type="Keyboard">
-                    <param id="0" name="Key">65</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-19" name="Rotate counter-clockwise" sid="117669821104882" type="Player1">
-                    <param id="0" name="Degrees">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="989239309089829">
             <conditions>
                 <condition id="2" name="Key is down" sid="622868484604644" type="Keyboard">
-                    <param id="0" name="Key">83</param>
+                    <param id="0" name="Key">32</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-23" name="Move at angle" sid="883955392175737" type="Player1">
-                    <param id="0" name="Angle">0</param>
-                    <param id="1" name="Distance">1</param>
+                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="883955392175737" type="Player1">
+                    <param id="0" name="Acceleration">50</param>
+                    <param id="1" name="X">Mouse.X</param>
+                    <param id="2" name="Y">Mouse.Y</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="693383613175563">
             <conditions>
-                <condition id="2" name="Key is down" sid="650018579576580" type="Keyboard">
-                    <param id="0" name="Key">68</param>
-                </condition>
+                <condition id="-1" name="Every tick" sid="898761955687654" type="System" />
             </conditions>
             <actions>
-                <action id="-18" name="Rotate clockwise" sid="890591096973297" type="Player1">
-                    <param id="0" name="Degrees">1</param>
+                <action id="-21" name="Rotate toward position" sid="520302401407125" type="Player1">
+                    <param id="0" name="Degrees">10</param>
+                    <param id="1" name="X">Mouse.X</param>
+                    <param id="2" name="Y">Mouse.Y</param>
                 </action>
             </actions>
         </event-block>
@@ -304,6 +294,11 @@
                     <param id="1" name="X">Star.X</param>
                     <param id="2" name="Y">Star.Y</param>
                 </action>
+                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="311121143641540" type="Bullet">
+                    <param id="0" name="Acceleration">30</param>
+                    <param id="1" name="X">Star.X</param>
+                    <param id="2" name="Y">Star.Y</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="771007892332175">
@@ -403,6 +398,10 @@
             <actions />
         </event-block>
         <event-block sid="104091185377353">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="909604265934951">
             <conditions />
             <actions />
         </event-block>

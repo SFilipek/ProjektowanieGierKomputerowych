@@ -105,6 +105,9 @@
                 <behavior-type name="DestroyOutsideLayout" sid="465819824928856">
                     <behavior id="destroy" />
                 </behavior-type>
+                <behavior-type name="CustomMovement" sid="917213430631850">
+                    <behavior id="custom" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="774508312525428" speed="5">
