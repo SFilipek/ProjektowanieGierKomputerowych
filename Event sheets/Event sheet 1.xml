@@ -340,7 +340,22 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-26" name="Restart layout" sid="278970587229482" type="System" />
+                <action id="-9" name="Destroy" sid="818564065838480" type="Player2" />
+                <action id="-9" name="Destroy" sid="449761092442471" type="Player1" />
+                <action id="-46" name="Recreate initial objects" sid="278970587229482" type="System">
+                    <param id="0" name="Object">Player2</param>
+                    <param id="1" name="From X">0</param>
+                    <param id="2" name="From Y">0</param>
+                    <param id="3" name="To X">985</param>
+                    <param id="4" name="To Y">784</param>
+                </action>
+                <action id="-46" name="Recreate initial objects" sid="954221728344467" type="System">
+                    <param id="0" name="Object">Player1</param>
+                    <param id="1" name="From X">0</param>
+                    <param id="2" name="From Y">0</param>
+                    <param id="3" name="To X">273</param>
+                    <param id="4" name="To Y">200</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="334702780596482">
