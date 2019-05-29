@@ -21,6 +21,11 @@
                 <action id="-5" name="Set width" sid="162995226021631" type="ProgressBarP1">
                     <param id="0" name="Width">Player1.Health</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="522281268611196" type="Player1">
+                    <param id="0" name="Object">Explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="171179763521694">
@@ -42,6 +47,11 @@
                 </action>
                 <action id="0" name="Set text" sid="830213481309813" type="GamesWonByP2">
                     <param id="0" name="Text">P2Wins</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="892475266022221" type="Player1">
+                    <param id="0" name="Object">Explosion1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
             </actions>
         </event-block>
@@ -172,6 +182,11 @@
                 <action id="-5" name="Set width" sid="700635898012606" type="ProgressBar2P2">
                     <param id="0" name="Width">Player2.Health</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="301335434384149" type="Player2">
+                    <param id="0" name="Object">Explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="868197088936579">
@@ -222,6 +237,11 @@
                 <action id="-15" name="Set visible" sid="941404672602296" type="DRAW">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="810673284298557" type="Player1">
+                    <param id="0" name="Object">Explosion1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="546793698493665">
@@ -249,6 +269,11 @@
                 <action id="0" name="Set text" sid="818306775508614" type="GamesWonByP2">
                     <param id="0" name="Text">P2Wins</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="180078396687262" type="Player1">
+                    <param id="0" name="Object">Explosion1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="473423029395494">
@@ -275,6 +300,11 @@
                 </action>
                 <action id="0" name="Set text" sid="756842231034948" type="GamesWonByP1">
                     <param id="0" name="Text">P1Wins</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="845658124426645" type="Player2">
+                    <param id="0" name="Object">Explosion1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
             </actions>
         </event-block>
@@ -337,9 +367,11 @@
             <actions>
                 <action id="-9" name="Destroy" sid="818564065838480" type="Player2" />
                 <action id="-9" name="Destroy" sid="449761092442471" type="Player1" />
+                <action id="-9" name="Destroy" sid="245530959101833" type="Bullet" />
                 <action id="-9" name="Destroy" sid="118422063234724" type="DRAW" />
                 <action id="-9" name="Destroy" sid="258612935623208" type="Player1Wins" />
                 <action id="-9" name="Destroy" sid="184625516608003" type="Player2Wins" />
+                <action id="-9" name="Destroy" sid="645002958471930" type="NoMoreRockets" />
                 <action id="-46" name="Recreate initial objects" sid="278970587229482" type="System">
                     <param id="0" name="Object">Player2</param>
                     <param id="1" name="From X">0</param>
@@ -375,35 +407,35 @@
                     <param id="3" name="To X">355</param>
                     <param id="4" name="To Y">377</param>
                 </action>
+                <action id="-46" name="Recreate initial objects" sid="394766892955963" type="System">
+                    <param id="0" name="Object">NoMoreRockets</param>
+                    <param id="1" name="From X">0</param>
+                    <param id="2" name="From Y">0</param>
+                    <param id="3" name="To X">411</param>
+                    <param id="4" name="To Y">985</param>
+                </action>
+                <action id="-5" name="Set width" sid="382356591421859" type="ProgressBarP1">
+                    <param id="0" name="Width">200</param>
+                </action>
+                <action id="-5" name="Set width" sid="346116079763526" type="ProgressBar2P2">
+                    <param id="0" name="Width">200</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="334702780596482">
+        <event-block sid="328573609496799">
             <conditions>
-                <condition id="-7" name="Compare instance variable" sid="261195264600481" type="Player1">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
+                <condition id="0" name="On collision with another object" sid="492693730358738" type="Bullet">
+                    <param id="0" name="Object">Star</param>
                 </condition>
             </conditions>
-            <actions />
-        </event-block>
-        <event-block sid="670979930142338">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="626320258325708" type="Player2">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
-        <event-block sid="104091185377353">
-            <conditions />
-            <actions />
-        </event-block>
-        <event-block sid="909604265934951">
-            <conditions />
-            <actions />
+            <actions>
+                <action id="0" name="Spawn another object" sid="314136546107258" type="Bullet">
+                    <param id="0" name="Object">Explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="916150309182482" type="Bullet" />
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
