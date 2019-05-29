@@ -10,10 +10,13 @@
     <unique-id>3k8y8jenijj4j</unique-id>
     <saved-with-version>26900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
@@ -245,17 +248,44 @@
         <object-type name="GamesWonByP2" sid="324865631121711">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Title" sid="862993780598633">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="LoginTitle" sid="505666446174417">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NameLabel" sid="158492464469695">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NameTextBox" sid="234168786845114">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="JoinButton" sid="842020892990756">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TipsLabel" sid="347123570439981">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TipsLabel2" sid="239148763055156">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Multiplayer" sid="581715433357352">
+            <plugin id="Multiplayer" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>Login.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>LoginEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="16" />
         <global-instance type="Keyboard" uid="17" />
+        <global-instance type="Multiplayer" uid="26" />
     </global-instances>
     <sounds-folder />
     <music-folder />
