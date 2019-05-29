@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>Bullet hitting Player1</comment>
+        <event-block sid="460942925488666">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="629596153438875" type="Bullet">
+                    <param id="0" name="Object">Player1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="977143905181556" type="Player1">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="610493158173399" type="Bullet" />
+                <action id="-5" name="Set width" sid="162995226021631" type="ProgressBarP1">
+                    <param id="0" name="Width">Player1.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="171179763521694">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="130268347057359" type="Player1">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="573154365966954" type="Player1" />
+            </actions>
+        </event-block>
+        <comment>PLayer1 controls</comment>
+        <event-block sid="881669858200352">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="893701668364272" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="239547335346027" type="Player1">
+                    <param id="0" name="Instance variable">Rockets</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="363385307744821" type="Player1">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="447435804271297" type="Player1">
+                    <param id="0" name="Instance variable">Rockets</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="759704158473623">
+            <conditions>
+                <condition id="2" name="Key is down" sid="811030534112402" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="117669821104882" type="Player1">
+                    <param id="0" name="Degrees">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="989239309089829">
+            <conditions>
+                <condition id="2" name="Key is down" sid="622868484604644" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="883955392175737" type="Player1">
+                    <param id="0" name="Angle">0</param>
+                    <param id="1" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="693383613175563">
+            <conditions>
+                <condition id="2" name="Key is down" sid="650018579576580" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="890591096973297" type="Player1">
+                    <param id="0" name="Degrees">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Player2 controls</comment>
+        <event-block sid="498586819735462">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="184572386007054" type="Keyboard">
+                    <param id="0" name="Key">104</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="226366831940202" type="Player2">
+                    <param id="0" name="Instance variable">Rokcets</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="509517859193886" type="Player2">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">&quot;Shoot&quot;</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="603616274493755" type="Player2">
+                    <param id="0" name="Instance variable">Rokcets</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="128543371528728">
+            <conditions>
+                <condition id="2" name="Key is down" sid="499527986387974" type="Keyboard">
+                    <param id="0" name="Key">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="881597914888564" type="Player2">
+                    <param id="0" name="Degrees">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="784558653089175">
+            <conditions>
+                <condition id="2" name="Key is down" sid="436368477383132" type="Keyboard">
+                    <param id="0" name="Key">102</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="585506950382795" type="Player2">
+                    <param id="0" name="Degrees">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="254409850561184">
+            <conditions>
+                <condition id="2" name="Key is down" sid="305759900120724" type="Keyboard">
+                    <param id="0" name="Key">101</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="765359855494587" type="Player2">
+                    <param id="0" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Bullet hitting Player2</comment>
+        <event-block sid="782688975874049">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="499783466252020" type="Bullet">
+                    <param id="0" name="Object">Player2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="316683130406888" type="Player2">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Destroy" sid="696271782710480" type="Bullet" />
+                <action id="-5" name="Set width" sid="700635898012606" type="ProgressBar2P2">
+                    <param id="0" name="Width">Player2.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="868197088936579">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="994926298760768" type="Player2">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="863103831941685" type="Player2" />
+            </actions>
+        </event-block>
+        <event-block sid="725525655687960">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="485353791411137" type="Player1">
+                    <param id="0" name="Object">Player2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="442081101428728" type="Player1" />
+                <action id="-9" name="Destroy" sid="116109245895461" type="Player2" />
+            </actions>
+        </event-block>
+        <event-block sid="546793698493665">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="449123974449226" type="Player1">
+                    <param id="0" name="Object">Star</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="644182307477880" type="Player1" />
+            </actions>
+        </event-block>
+        <event-block sid="473423029395494">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="466574085414507" type="Player2">
+                    <param id="0" name="Object">Star</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="112876082897400" type="Player2" />
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="205074042460581">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="750657224879549" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="245088335937697" type="Player1">
+                    <param id="0" name="Acceleration">30</param>
+                    <param id="1" name="X">Star.X</param>
+                    <param id="2" name="Y">Star.Y</param>
+                </action>
+                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="367617280063483" type="Player2">
+                    <param id="0" name="Acceleration">30</param>
+                    <param id="1" name="X">Star.X</param>
+                    <param id="2" name="Y">Star.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="771007892332175">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="874824053604748">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="854974177832603" type="Player1">
+                    <param id="0" name="Instance variable">Rockets</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="696035802772152" type="Player2">
+                    <param id="0" name="Instance variable">Rokcets</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="778352659597503" type="NoMoreRockets">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="551279000196991">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="493214697910875">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="580105278876600" type="Keyboard">
+                    <param id="0" name="Key">77</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="278970587229482" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
