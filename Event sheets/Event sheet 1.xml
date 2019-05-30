@@ -136,11 +136,11 @@
                                     <param id="3" name="To X">273</param>
                                     <param id="4" name="To Y">200</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="487424444263739" type="Player1">
+                                <action id="-10" name="Set value" sid="524312808428140" type="Player1">
                                     <param id="0" name="Instance variable">peerid</param>
                                     <param id="1" name="Value">Multiplayer.MyID</param>
                                 </action>
-                                <action id="13" name="Associate object with peer" sid="406780765625219" type="Multiplayer">
+                                <action id="13" name="Associate object with peer" sid="908094414021638" type="Multiplayer">
                                     <param id="0" name="Object">Player1</param>
                                     <param id="1" name="Peer ID">Multiplayer.MyID</param>
                                 </action>
@@ -158,6 +158,14 @@
                                 <action id="-9" name="Set value" sid="980970669564708" type="System">
                                     <param id="0" name="Variable">GameState</param>
                                     <param id="1" name="Value">&quot;started&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="148341483987746" type="Player2">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.MyID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="896980660796223" type="Multiplayer">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="Peer ID">Multiplayer.MyID</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -236,6 +244,18 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="610394978365628">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="152695868712267" type="Player1">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Multiplayer.HostID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="864913221658875" type="Player1" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" inactive="1" sid="334618251345212" title="Host">
@@ -291,6 +311,18 @@
                                     <param id="2" name="Message">GameState</param>
                                     <param id="3" name="Mode">0</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="139802474730320">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="949344076560720" type="Player2">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Multiplayer.PeerID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="520649057252820" type="Player2" />
                             </actions>
                         </event-block>
                         <comment>Bullet hitting Player1</comment>
@@ -554,6 +586,14 @@
                                     <param id="2" name="From Y">0</param>
                                     <param id="3" name="To X">273</param>
                                     <param id="4" name="To Y">200</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="349864801071352" type="Player1">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.MyID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="830084036083520" type="Player2">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.PeerID</param>
                                 </action>
                             </actions>
                         </event-block>
