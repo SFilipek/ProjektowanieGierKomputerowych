@@ -11,6 +11,7 @@
     <saved-with-version>26900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Multiplayer" version="1">Multiplayer</plugin>
@@ -59,8 +60,8 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Health" sid="224398815561359" type="number" />
-                <instance-variable name="Rockets" sid="962377338151255" type="number" />
                 <instance-variable name="Wins" sid="174596656205462" type="number" />
+                <instance-variable name="peerid" sid="983968504937839" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="406332299400476">
@@ -128,8 +129,8 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Health" sid="639940714840558" type="number" />
-                <instance-variable name="Rokcets" sid="748714934063024" type="number" />
                 <instance-variable name="Wins" sid="934200772336264" type="number" />
+                <instance-variable name="peerid" sid="647722425538891" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CustomMovement" sid="597593202953483">
@@ -391,6 +392,12 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="NetStats" sid="522596021465563">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Function" sid="490716868369737">
+            <plugin id="Function" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -405,6 +412,7 @@
         <global-instance type="Mouse" uid="26" />
         <global-instance type="Keyboard" uid="27" />
         <global-instance type="Multiplayer" uid="28" />
+        <global-instance type="Function" uid="29" />
     </global-instances>
     <sounds-folder />
     <music-folder />

@@ -3,431 +3,682 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="1" name="GAME_NAME" sid="969126059710818" static="0" type="text">spacewar2019</variable>
+        <variable constant="1" name="INSTANCE_NAME" sid="189042723348742" static="0" type="text">default</variable>
+        <variable constant="1" name="ROOM_NAME" sid="488240738757953" static="0" type="text">game</variable>
+        <variable comment='&quot;waiting&quot;, &quot;getready&quot;, &quot;go&quot; or &quot;started&quot;' constant="0" name="GameState" sid="290368264765703" static="0" type="text">waiting</variable>
         <variable constant="0" name="P2Wins" sid="944307788523910" static="0" type="number">0</variable>
         <variable constant="0" name="P1Wins" sid="673800846166015" static="0" type="number">0</variable>
-        <comment>Bullet hitting Player1</comment>
-        <event-block sid="460942925488666">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="629596153438875" type="Bullet">
-                    <param id="0" name="Object">Player1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-12" name="Subtract from" sid="977143905181556" type="Player1">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">20</param>
-                </action>
-                <action id="-9" name="Destroy" sid="610493158173399" type="Bullet" />
-                <action id="-5" name="Set width" sid="162995226021631" type="ProgressBarP1">
-                    <param id="0" name="Width">Player1.Health</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="522281268611196" type="Player1">
-                    <param id="0" name="Object">Explosion3</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="171179763521694">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="130268347057359" type="Player1">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="573154365966954" type="Player1" />
-                <action id="-15" name="Set visible" sid="678700815706831" type="Player2Wins">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-10" name="Add to" sid="761161927306659" type="System">
-                    <param id="0" name="Variable">P2Wins</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="0" name="Set text" sid="830213481309813" type="GamesWonByP2">
-                    <param id="0" name="Text">P2Wins</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="892475266022221" type="Player1">
-                    <param id="0" name="Object">Explosion1</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>PLayer1 controls</comment>
-        <event-block sid="881669858200352">
-            <conditions>
-                <condition id="0" name="On click" sid="893701668364272" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="239547335346027" type="Player1">
-                    <param id="0" name="Instance variable">Rockets</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="363385307744821" type="Player1">
-                    <param id="0" name="Object">Bullet</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="447435804271297" type="Player1">
-                    <param id="0" name="Instance variable">Rockets</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="989239309089829">
-            <conditions>
-                <condition id="2" name="Key is down" sid="622868484604644" type="Keyboard">
-                    <param id="0" name="Key">32</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="883955392175737" type="Player1">
-                    <param id="0" name="Acceleration">20</param>
-                    <param id="1" name="X">Mouse.X</param>
-                    <param id="2" name="Y">Mouse.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="693383613175563">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="898761955687654" type="System" />
-            </conditions>
-            <actions>
-                <action id="-21" name="Rotate toward position" sid="520302401407125" type="Player1">
-                    <param id="0" name="Degrees">10</param>
-                    <param id="1" name="X">Mouse.X</param>
-                    <param id="2" name="Y">Mouse.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Player2 controls</comment>
-        <event-block sid="498586819735462">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="184572386007054" type="Keyboard">
-                    <param id="0" name="Key">104</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="226366831940202" type="Player2">
-                    <param id="0" name="Instance variable">Rokcets</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="509517859193886" type="Player2">
-                    <param id="0" name="Object">Bullet</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="Image point">&quot;Shoot&quot;</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="603616274493755" type="Player2">
-                    <param id="0" name="Instance variable">Rokcets</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="128543371528728">
-            <conditions>
-                <condition id="2" name="Key is down" sid="499527986387974" type="Keyboard">
-                    <param id="0" name="Key">100</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-19" name="Rotate counter-clockwise" sid="881597914888564" type="Player2">
-                    <param id="0" name="Degrees">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="784558653089175">
-            <conditions>
-                <condition id="2" name="Key is down" sid="436368477383132" type="Keyboard">
-                    <param id="0" name="Key">102</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-18" name="Rotate clockwise" sid="585506950382795" type="Player2">
-                    <param id="0" name="Degrees">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="254409850561184">
-            <conditions>
-                <condition id="2" name="Key is down" sid="305759900120724" type="Keyboard">
-                    <param id="0" name="Key">101</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-17" name="Move forward" sid="765359855494587" type="Player2">
-                    <param id="0" name="Distance">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Bullet hitting Player2</comment>
-        <event-block sid="782688975874049">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="499783466252020" type="Bullet">
-                    <param id="0" name="Object">Player2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-12" name="Subtract from" sid="316683130406888" type="Player2">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">20</param>
-                </action>
-                <action id="-9" name="Destroy" sid="696271782710480" type="Bullet" />
-                <action id="-5" name="Set width" sid="700635898012606" type="ProgressBar2P2">
-                    <param id="0" name="Width">Player2.Health</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="301335434384149" type="Player2">
-                    <param id="0" name="Object">Explosion3</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="868197088936579">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="994926298760768" type="Player2">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="863103831941685" type="Player2" />
-                <action id="-15" name="Set visible" sid="334142688002001" type="Player1Wins">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-10" name="Add to" sid="421868733849384" type="System">
-                    <param id="0" name="Variable">P1Wins</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="0" name="Set text" sid="717356192322845" type="GamesWonByP1">
-                    <param id="0" name="Text">P1Wins</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="725525655687960">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="485353791411137" type="Player1">
-                    <param id="0" name="Object">Player2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="442081101428728" type="Player1" />
-                <action id="-9" name="Destroy" sid="116109245895461" type="Player2" />
-                <action id="-5" name="Set width" sid="246037903302577" type="ProgressBarP1">
-                    <param id="0" name="Width">0</param>
-                </action>
-                <action id="-5" name="Set width" sid="274796155105335" type="ProgressBar2P2">
-                    <param id="0" name="Width">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="700886777187999" type="Player1">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="692635592843981" type="Player2">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="941404672602296" type="DRAW">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="810673284298557" type="Player1">
-                    <param id="0" name="Object">Explosion1</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="546793698493665">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="449123974449226" type="Player1">
-                    <param id="0" name="Object">Star</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="644182307477880" type="Player1" />
-                <action id="-5" name="Set width" sid="539723276177694" type="ProgressBarP1">
-                    <param id="0" name="Width">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="874016554686353" type="Player1">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="542438509392965" type="Player2Wins">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-10" name="Add to" sid="424019758670893" type="System">
-                    <param id="0" name="Variable">P2Wins</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="0" name="Set text" sid="818306775508614" type="GamesWonByP2">
-                    <param id="0" name="Text">P2Wins</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="180078396687262" type="Player1">
-                    <param id="0" name="Object">Explosion1</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="473423029395494">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="466574085414507" type="Player2">
-                    <param id="0" name="Object">Star</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="112876082897400" type="Player2" />
-                <action id="-5" name="Set width" sid="422289348220345" type="ProgressBar2P2">
-                    <param id="0" name="Width">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="342523068375412" type="Player2">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="615842891420815" type="Player1Wins">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-10" name="Add to" sid="450562947221820" type="System">
-                    <param id="0" name="Variable">P1Wins</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="0" name="Set text" sid="756842231034948" type="GamesWonByP1">
-                    <param id="0" name="Text">P1Wins</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="845658124426645" type="Player2">
-                    <param id="0" name="Object">Explosion1</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment></comment>
-        <event-block sid="205074042460581">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="750657224879549" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="245088335937697" type="Player1">
-                    <param id="0" name="Acceleration">30</param>
-                    <param id="1" name="X">Star.X</param>
-                    <param id="2" name="Y">Star.Y</param>
-                </action>
-                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="367617280063483" type="Player2">
-                    <param id="0" name="Acceleration">30</param>
-                    <param id="1" name="X">Star.X</param>
-                    <param id="2" name="Y">Star.Y</param>
-                </action>
-                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="311121143641540" type="Bullet">
-                    <param id="0" name="Acceleration">30</param>
-                    <param id="1" name="X">Star.X</param>
-                    <param id="2" name="Y">Star.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="874824053604748">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="854974177832603" type="Player1">
-                    <param id="0" name="Instance variable">Rockets</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="696035802772152" type="Player2">
-                    <param id="0" name="Instance variable">Rokcets</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="778352659597503" type="NoMoreRockets">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="493214697910875">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="580105278876600" type="Keyboard">
-                    <param id="0" name="Key">77</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="818564065838480" type="Player2" />
-                <action id="-9" name="Destroy" sid="449761092442471" type="Player1" />
-                <action id="-9" name="Destroy" sid="245530959101833" type="Bullet" />
-                <action id="-9" name="Destroy" sid="118422063234724" type="DRAW" />
-                <action id="-9" name="Destroy" sid="258612935623208" type="Player1Wins" />
-                <action id="-9" name="Destroy" sid="184625516608003" type="Player2Wins" />
-                <action id="-9" name="Destroy" sid="645002958471930" type="NoMoreRockets" />
-                <action id="-46" name="Recreate initial objects" sid="278970587229482" type="System">
-                    <param id="0" name="Object">Player2</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">985</param>
-                    <param id="4" name="To Y">784</param>
-                </action>
-                <action id="-46" name="Recreate initial objects" sid="954221728344467" type="System">
-                    <param id="0" name="Object">Player1</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">273</param>
-                    <param id="4" name="To Y">200</param>
-                </action>
-                <action id="-46" name="Recreate initial objects" sid="341079042834596" type="System">
-                    <param id="0" name="Object">DRAW</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">474</param>
-                    <param id="4" name="To Y">379</param>
-                </action>
-                <action id="-46" name="Recreate initial objects" sid="278637040802608" type="System">
-                    <param id="0" name="Object">Player1Wins</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">355</param>
-                    <param id="4" name="To Y">377</param>
-                </action>
-                <action id="-46" name="Recreate initial objects" sid="456662836159834" type="System">
-                    <param id="0" name="Object">Player2Wins</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">355</param>
-                    <param id="4" name="To Y">377</param>
-                </action>
-                <action id="-46" name="Recreate initial objects" sid="394766892955963" type="System">
-                    <param id="0" name="Object">NoMoreRockets</param>
-                    <param id="1" name="From X">0</param>
-                    <param id="2" name="From Y">0</param>
-                    <param id="3" name="To X">411</param>
-                    <param id="4" name="To Y">985</param>
-                </action>
-                <action id="-5" name="Set width" sid="382356591421859" type="ProgressBarP1">
-                    <param id="0" name="Width">200</param>
-                </action>
-                <action id="-5" name="Set width" sid="346116079763526" type="ProgressBar2P2">
-                    <param id="0" name="Width">200</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="328573609496799">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="492693730358738" type="Bullet">
-                    <param id="0" name="Object">Star</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="314136546107258" type="Bullet">
-                    <param id="0" name="Object">Explosion3</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="-9" name="Destroy" sid="916150309182482" type="Bullet" />
-            </actions>
-        </event-block>
+        <event-group description="" sid="785183777776679" title="Signalling">
+            <sub-events>
+                <comment>onStart connect to server, hosty/peer synchronization</comment>
+                <event-block sid="973257110683024">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="999151328441436" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="15" name="Add client input value" sid="878923862730552" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;shipx&quot;</param>
+                            <param id="1" name="Precision">1</param>
+                            <param id="2" name="Interpolation">1</param>
+                        </action>
+                        <action id="15" name="Add client input value" sid="485554178877536" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;shipy&quot;</param>
+                            <param id="1" name="Precision">1</param>
+                            <param id="2" name="Interpolation">1</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="623835097395196" type="Multiplayer">
+                            <param id="0" name="Object">Player1</param>
+                            <param id="1" name="Data">3</param>
+                            <param id="2" name="Precision">1</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="225532848204047" type="Multiplayer">
+                            <param id="0" name="Object">Player1</param>
+                            <param id="1" name="Instance variable">Player1|Health</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">1</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="687733539525994" type="Multiplayer">
+                            <param id="0" name="Object">Player1</param>
+                            <param id="1" name="Instance variable">Player1|Wins</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">1</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="709167666903261" type="Multiplayer">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Data">3</param>
+                            <param id="2" name="Precision">1</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="106954739842255" type="Multiplayer">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Instance variable">Player2|Health</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">1</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="12" name="Sync instance variable" sid="911111363182786" type="Multiplayer">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Instance variable">Player2|Wins</param>
+                            <param id="2" name="Precision">3</param>
+                            <param id="3" name="Interpolation">1</param>
+                            <param id="4" name="Client value tag">&quot;&quot;</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="563800534404662" type="Multiplayer">
+                            <param id="0" name="Object">Bullet</param>
+                            <param id="1" name="Data">1</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="279859084987139" type="Multiplayer">
+                            <param id="0" name="Object">Explosion1</param>
+                            <param id="1" name="Data">1</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="11" name="Sync object" sid="909907305515141" type="Multiplayer">
+                            <param id="0" name="Object">Explosion3</param>
+                            <param id="1" name="Data">1</param>
+                            <param id="2" name="Precision">2</param>
+                            <param id="3" name="Bandwidth">0</param>
+                        </action>
+                        <action id="1" name="Connect" sid="719564000626649" type="Multiplayer">
+                            <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="365501839384194">
+                    <conditions>
+                        <condition id="2" name="On connected" sid="289223024152178" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Log in" sid="338164099946245" type="Multiplayer">
+                            <param id="0" name="Alias">MyUsername</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="952677336958347">
+                    <conditions>
+                        <condition id="4" name="On logged in" sid="606397069467633" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="19" name="Auto-join room" sid="245039278818150" type="Multiplayer">
+                            <param id="0" name="Game">GAME_NAME</param>
+                            <param id="1" name="Instance">INSTANCE_NAME</param>
+                            <param id="2" name="First room">ROOM_NAME</param>
+                            <param id="3" name="Max peers">2</param>
+                            <param id="4" name="Locking">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="842022587625525">
+                    <conditions>
+                        <condition id="5" name="On joined room" sid="202876627328486" type="Multiplayer" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="142334637210455">
+                            <conditions>
+                                <condition id="10" name="Is host" sid="672976136972590" type="Multiplayer" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="409812175362778" type="System">
+                                    <param id="0" name="Group name">&quot;Host&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-46" name="Recreate initial objects" sid="120684873301920" type="System">
+                                    <param id="0" name="Object">Player1</param>
+                                    <param id="1" name="From X">0</param>
+                                    <param id="2" name="From Y">0</param>
+                                    <param id="3" name="To X">273</param>
+                                    <param id="4" name="To Y">200</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="487424444263739" type="Player1">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.MyID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="406780765625219" type="Multiplayer">
+                                    <param id="0" name="Object">Player1</param>
+                                    <param id="1" name="Peer ID">Multiplayer.MyID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="466478625072161">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="727943516074714" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="854605342760191" type="System">
+                                    <param id="0" name="Group name">&quot;Peer&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="980970669564708" type="System">
+                                    <param id="0" name="Variable">GameState</param>
+                                    <param id="1" name="Value">&quot;started&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="318641876179195">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="138799995474477" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="170447172069876" type="NetStats">
+                            <param id="0" name="Text">Multiplayer.StatInboundCount &amp; &quot; in (&quot; &amp; (round(Multiplayer.StatInboundBandwidth/100)/10) &amp; &quot; k) / sec&quot; &amp; newline &amp; Multiplayer.StatOutboundCount &amp; &quot; out (&quot; &amp; (round(Multiplayer.StatOutboundBandwidth/100)/10) &amp; &quot; k) / sec&quot; &amp; newline &amp; &quot;Host ping &quot; &amp; round(Multiplayer.PeerLatency(Multiplayer.HostID)) &amp; &quot;, PDV &quot; &amp; round(Multiplayer.PeerPDV(Multiplayer.HostID))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="381612994655604" title="Game">
+            <sub-events>
+                <event-group description="" inactive="1" sid="511392488316924" title="Peer">
+                    <sub-events>
+                        <comment>Player2 controls</comment>
+                        <event-block sid="947345543846333">
+                            <conditions>
+                                <condition id="0" name="On click" sid="338648409154595" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="659934312129642" type="Player2">
+                                    <param id="0" name="Object">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="580049431575074">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="666455741758213" type="Keyboard">
+                                    <param id="0" name="Key">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="616376177464086" type="Player2">
+                                    <param id="0" name="Acceleration">20</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="545405114153890">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="835624220015173" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-21" name="Rotate toward position" sid="502955479406918" type="Player2">
+                                    <param id="0" name="Degrees">10</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="852580462416396">
+                            <conditions>
+                                <condition id="17" name="On client update" sid="327710031037280" type="Multiplayer" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Set client state" sid="779629625908208" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;shipx&quot;</param>
+                                    <param id="1" name="Value">Mouse.X</param>
+                                </action>
+                                <action id="14" name="Set client state" sid="408322056753906" type="Multiplayer">
+                                    <param id="0" name="Tag">&quot;shipy&quot;</param>
+                                    <param id="1" name="Value">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" inactive="1" sid="334618251345212" title="Host">
+                    <sub-events>
+                        <event-block sid="823143855038593">
+                            <conditions>
+                                <condition id="11" name="On peer connected" sid="386753568333660" type="Multiplayer" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="553806998726188" type="Bullet" />
+                                <action id="-46" name="Recreate initial objects" sid="398196204822580" type="System">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="From X">0</param>
+                                    <param id="2" name="From Y">0</param>
+                                    <param id="3" name="To X">985</param>
+                                    <param id="4" name="To Y">784</param>
+                                </action>
+                                <action id="-46" name="Recreate initial objects" sid="896052820145015" type="System">
+                                    <param id="0" name="Object">Player1</param>
+                                    <param id="1" name="From X">0</param>
+                                    <param id="2" name="From Y">0</param>
+                                    <param id="3" name="To X">273</param>
+                                    <param id="4" name="To Y">200</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="502979951407535" type="Player2">
+                                    <param id="0" name="Instance variable">peerid</param>
+                                    <param id="1" name="Value">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="13" name="Associate object with peer" sid="189574023484905" type="Multiplayer">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="Peer ID">Multiplayer.PeerID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="241312221097842" type="Function">
+                                    <param id="0" name="Name">&quot;SetGameState&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;started&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="174181786018935">
+                            <conditions>
+                                <condition id="0" name="On function" sid="106855886723302" type="Function">
+                                    <param id="0" name="Name">&quot;SetGameState&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="156543929361357" type="System">
+                                    <param id="0" name="Variable">GameState</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="9" name="Broadcast message" sid="124161247002121" type="Multiplayer">
+                                    <param id="0" name="From ID">&quot;&quot;</param>
+                                    <param id="1" name="Tag">&quot;gamestate-changed&quot;</param>
+                                    <param id="2" name="Message">GameState</param>
+                                    <param id="3" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Bullet hitting Player1</comment>
+                        <event-block sid="460942925488666">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="629596153438875" type="Bullet">
+                                    <param id="0" name="Object">Player1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="977143905181556" type="Player1">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="610493158173399" type="Bullet" />
+                                <action id="-5" name="Set width" sid="162995226021631" type="ProgressBarP1">
+                                    <param id="0" name="Width">Player1.Health</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="522281268611196" type="Player1">
+                                    <param id="0" name="Object">Explosion3</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="171179763521694">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="130268347057359" type="Player1">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="573154365966954" type="Player1" />
+                                <action id="-15" name="Set visible" sid="678700815706831" type="Player2Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="761161927306659" type="System">
+                                    <param id="0" name="Variable">P2Wins</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="830213481309813" type="GamesWonByP2">
+                                    <param id="0" name="Text">P2Wins</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="892475266022221" type="Player1">
+                                    <param id="0" name="Object">Explosion1</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Bullet hitting Player2</comment>
+                        <event-block sid="986128005161308">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="643105584301368" type="Bullet">
+                                    <param id="0" name="Object">Player2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="647196536069819" type="Player2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="226279836234818" type="Bullet" />
+                                <action id="-5" name="Set width" sid="378664701503262" type="ProgressBar2P2">
+                                    <param id="0" name="Width">Player2.Health</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="528330432018785" type="Player2">
+                                    <param id="0" name="Object">Explosion3</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="673419521443922">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="595019770477412" type="Player2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="253579472306958" type="Player2" />
+                                <action id="-15" name="Set visible" sid="790212400515138" type="Player1Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="216865311770543" type="System">
+                                    <param id="0" name="Variable">P1Wins</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="664967824990924" type="GamesWonByP1">
+                                    <param id="0" name="Text">P1Wins</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>PLayer1 controls</comment>
+                        <event-block sid="881669858200352">
+                            <conditions>
+                                <condition id="0" name="On click" sid="893701668364272" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="363385307744821" type="Player1">
+                                    <param id="0" name="Object">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="989239309089829">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="622868484604644" type="Keyboard">
+                                    <param id="0" name="Key">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="883955392175737" type="Player1">
+                                    <param id="0" name="Acceleration">20</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="693383613175563">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="898761955687654" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-21" name="Rotate toward position" sid="520302401407125" type="Player1">
+                                    <param id="0" name="Degrees">10</param>
+                                    <param id="1" name="X">Mouse.X</param>
+                                    <param id="2" name="Y">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="725525655687960">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="485353791411137" type="Player1">
+                                    <param id="0" name="Object">Player2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="442081101428728" type="Player1" />
+                                <action id="-9" name="Destroy" sid="116109245895461" type="Player2" />
+                                <action id="-5" name="Set width" sid="246037903302577" type="ProgressBarP1">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="274796155105335" type="ProgressBar2P2">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="700886777187999" type="Player1">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="692635592843981" type="Player2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="941404672602296" type="DRAW">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="810673284298557" type="Player1">
+                                    <param id="0" name="Object">Explosion1</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="546793698493665">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="449123974449226" type="Player1">
+                                    <param id="0" name="Object">Star</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="644182307477880" type="Player1" />
+                                <action id="-5" name="Set width" sid="539723276177694" type="ProgressBarP1">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="874016554686353" type="Player1">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="542438509392965" type="Player2Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="424019758670893" type="System">
+                                    <param id="0" name="Variable">P2Wins</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="818306775508614" type="GamesWonByP2">
+                                    <param id="0" name="Text">P2Wins</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="180078396687262" type="Player1">
+                                    <param id="0" name="Object">Explosion1</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="473423029395494">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="466574085414507" type="Player2">
+                                    <param id="0" name="Object">Star</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="112876082897400" type="Player2" />
+                                <action id="-5" name="Set width" sid="422289348220345" type="ProgressBar2P2">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="342523068375412" type="Player2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="615842891420815" type="Player1Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="450562947221820" type="System">
+                                    <param id="0" name="Variable">P1Wins</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="756842231034948" type="GamesWonByP1">
+                                    <param id="0" name="Text">P1Wins</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="845658124426645" type="Player2">
+                                    <param id="0" name="Object">Explosion1</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="446270064522174">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="359568684794489" type="Keyboard">
+                                    <param id="0" name="Key">77</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="199900998285151" type="Function">
+                                    <param id="0" name="Name">&quot;SetGameState&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;started&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="818564065838480" type="Player2" />
+                                <action id="-9" name="Destroy" sid="449761092442471" type="Player1" />
+                                <action id="-9" name="Destroy" sid="245530959101833" type="Bullet" />
+                                <action id="-46" name="Recreate initial objects" sid="278970587229482" type="System">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="From X">0</param>
+                                    <param id="2" name="From Y">0</param>
+                                    <param id="3" name="To X">985</param>
+                                    <param id="4" name="To Y">784</param>
+                                </action>
+                                <action id="-46" name="Recreate initial objects" sid="954221728344467" type="System">
+                                    <param id="0" name="Object">Player1</param>
+                                    <param id="1" name="From X">0</param>
+                                    <param id="2" name="From Y">0</param>
+                                    <param id="3" name="To X">273</param>
+                                    <param id="4" name="To Y">200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="328573609496799">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="492693730358738" type="Bullet">
+                                    <param id="0" name="Object">Star</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="314136546107258" type="Bullet">
+                                    <param id="0" name="Object">Explosion3</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="916150309182482" type="Bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="205074042460581">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="750657224879549" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="245088335937697" type="Player1">
+                                    <param id="0" name="Acceleration">30</param>
+                                    <param id="1" name="X">Star.X</param>
+                                    <param id="2" name="Y">Star.Y</param>
+                                </action>
+                                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="367617280063483" type="Player2">
+                                    <param id="0" name="Acceleration">30</param>
+                                    <param id="1" name="X">Star.X</param>
+                                    <param id="2" name="Y">Star.Y</param>
+                                </action>
+                                <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="311121143641540" type="Bullet">
+                                    <param id="0" name="Acceleration">30</param>
+                                    <param id="1" name="X">Star.X</param>
+                                    <param id="2" name="Y">Star.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="216542524688038" title="Common">
+            <sub-events>
+                <event-block sid="376407676552905">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="439218596523028" type="System">
+                            <param id="0" name="Variable">GameState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;started&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="118422063234724" type="DRAW" />
+                        <action id="-9" name="Destroy" sid="258612935623208" type="Player1Wins" />
+                        <action id="-9" name="Destroy" sid="184625516608003" type="Player2Wins" />
+                        <action id="-9" name="Destroy" sid="645002958471930" type="NoMoreRockets" />
+                        <action id="-46" name="Recreate initial objects" sid="341079042834596" type="System">
+                            <param id="0" name="Object">DRAW</param>
+                            <param id="1" name="From X">0</param>
+                            <param id="2" name="From Y">0</param>
+                            <param id="3" name="To X">474</param>
+                            <param id="4" name="To Y">379</param>
+                        </action>
+                        <action id="-46" name="Recreate initial objects" sid="278637040802608" type="System">
+                            <param id="0" name="Object">Player1Wins</param>
+                            <param id="1" name="From X">0</param>
+                            <param id="2" name="From Y">0</param>
+                            <param id="3" name="To X">355</param>
+                            <param id="4" name="To Y">377</param>
+                        </action>
+                        <action id="-46" name="Recreate initial objects" sid="456662836159834" type="System">
+                            <param id="0" name="Object">Player2Wins</param>
+                            <param id="1" name="From X">0</param>
+                            <param id="2" name="From Y">0</param>
+                            <param id="3" name="To X">355</param>
+                            <param id="4" name="To Y">377</param>
+                        </action>
+                        <action id="-46" name="Recreate initial objects" sid="394766892955963" type="System">
+                            <param id="0" name="Object">NoMoreRockets</param>
+                            <param id="1" name="From X">0</param>
+                            <param id="2" name="From Y">0</param>
+                            <param id="3" name="To X">411</param>
+                            <param id="4" name="To Y">985</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="382356591421859" type="ProgressBarP1">
+                            <param id="0" name="Width">200</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="346116079763526" type="ProgressBar2P2">
+                            <param id="0" name="Width">200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="323262481537632">
+                    <conditions>
+                        <condition id="15" name="On peer message" sid="258724547929933" type="Multiplayer">
+                            <param id="0" name="Tag">&quot;gamestate-changed&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="280400278174691" type="System">
+                            <param id="0" name="Variable">GameState</param>
+                            <param id="1" name="Value">Multiplayer.Message</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="194623721547641">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="654774945010022" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Move to layer" sid="670050617490372" type="Player1">
+                            <param id="0" name="Layer">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="287814940654380" type="Player2">
+                            <param id="0" name="Layer">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="618437949553474" type="Bullet">
+                            <param id="0" name="Layer">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

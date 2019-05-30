@@ -49,6 +49,33 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="NetStats" uid="4">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>8</x>
+                        <y>34</y>
+                        <z>0</z>
+                        <width>465</width>
+                        <height>208</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -77,8 +104,8 @@
                     </properties>
                     <instance-variables>
                         <Health>200</Health>
-                        <Rockets>20</Rockets>
                         <Wins>0</Wins>
+                        <peerid></peerid>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -184,8 +211,8 @@
                     </properties>
                     <instance-variables>
                         <Health>200</Health>
-                        <Rokcets>20</Rokcets>
                         <Wins>0</Wins>
+                        <peerid></peerid>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
@@ -332,33 +359,6 @@
                         <z>0</z>
                         <width>516</width>
                         <height>29</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="NoMoreRockets" uid="4">
-                    <properties>
-                        <text>Both spaceships run out of rockets.</text>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-29,400,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>411</x>
-                        <y>985</y>
-                        <z>0</z>
-                        <width>677</width>
-                        <height>71</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

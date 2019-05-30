@@ -47,7 +47,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TiledBackground" uid="19">
+                <instance type="TiledBackground" uid="16">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -67,7 +67,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="LoginTitle" uid="20">
+                <instance type="LoginTitle" uid="17">
                     <properties>
                         <text>Spacewar tribute</text>
                         <initial-visibility>Visible</initial-visibility>
